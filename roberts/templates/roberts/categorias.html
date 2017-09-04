@@ -1,0 +1,15 @@
+{% extends "roberts/base.html" %}
+
+{% block content %}
+<p>Categorias:</p>
+<u>
+    {% for categoria in categorias %}
+    <li>
+        <a href="{% url 'roberts:categoria' categoria.id %}">{{categoria}}</a>
+    </li>
+    {% empty %}
+        <li>No hay categorias xD</li>
+    {% endfor %}
+</u>
+
+{% endblock content %}

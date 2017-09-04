@@ -1,0 +1,27 @@
+{% extends "roberts/base.html" %}
+
+{% block content %}
+
+<h2>Categoria: {{categoria}}</h2>
+<h3>Sub-Categorias:) </h3>
+<ul>
+    {% for subcategoria in subcategorias %}
+        <li>
+            <p>{{ subcategoria.text}}</p>
+
+        </li>
+    {% empty %}
+        <li>No hay Sub-categorias xD</li>
+    {% endfor %}
+</ul>
+<ul>
+    {% for contenido in contenidos %}
+        <li>
+            <p>{{ contenido.descripcion}}</p>
+
+        </li>
+    {% empty %}
+        <li>No hay contenidos</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
