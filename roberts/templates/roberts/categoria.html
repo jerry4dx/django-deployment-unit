@@ -7,21 +7,12 @@
 <ul>
     {% for subcategoria in subcategorias %}
         <li>
-            <p>{{ subcategoria.text}}</p>
+            <a href="{% url 'roberts:contenido' subcategoria.id %}">{{ subcategoria.text}}</a>
 
         </li>
     {% empty %}
         <li>No hay Sub-categorias xD</li>
     {% endfor %}
 </ul>
-<ul>
-    {% for contenido in contenidos %}
-        <li>
-            <p>{{ contenido.descripcion}}</p>
 
-        </li>
-    {% empty %}
-        <li>No hay contenidos</li>
-    {% endfor %}
-</ul>
 {% endblock content %}

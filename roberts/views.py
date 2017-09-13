@@ -17,9 +17,12 @@ def categoria(request, categoria_id):
     context = {'categoria': categoria, 'subcategorias': subcategorias}
     return render(request, 'roberts/categoria.html', context)
 
-#def contenido(request, subcategoria_id):
- #   """Muestra 1 sola subcategoria y sus contenidos"""
-  #  subcategoria = SubCategoria.objects.get(id=subcategoria_id)
-   # contenido = subcategoria.contenido_set.order_by('-date_added')
-    #context ={'subcategoria':subcategoria, 'contenido':contenido}
-   # return  render(request, 'roberts/contenido.html', context)
+def contenido(request, subcategoria_id):
+    """Muestra 1 sola subcategoria y sus contenidos"""
+    subcategoria = SubCategoria.objects.get(id=subcategoria_id)
+    contenido = Contenido.objects.order_by('-date_added')
+    context ={'contenido':contenido, 'subcategoria':subcategoria}
+    return  render(request, 'roberts/contenido.html', context)
+
+#def subcategoria(request):
+ #   subcategoria =

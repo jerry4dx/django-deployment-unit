@@ -5,9 +5,10 @@
 <h2>Sub-Categoria: {{subcategoria}}</h2>
 <h3>Contenidos: </h3>
 <ul>
-    {% for contenido in contenidos %}
+    {% for contenido in contenido %}
         <li>
-            <p>{{ contenido.titulo}}</p>
+            <h3>{{ contenido.titulo |linebreaks }}</h3>
+            <p>{{ contenido.descripcion }}</p>
         </li>
     {% empty %}
         <li>No hay xDXDXDXD</li>

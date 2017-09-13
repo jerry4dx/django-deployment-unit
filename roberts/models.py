@@ -22,7 +22,7 @@ class SubCategoria(models.Model):
         verbose_name_plural = 'Sub-Categorias'
 
     def __str__(self):
-        return self.text
+        return '%s %s' % (self.text, self.categoria)
 
 class Contenido(models.Model):
     """Aqui van los procesos"""
@@ -36,7 +36,7 @@ class Contenido(models.Model):
 
 
     def __str__(self):
-        return self.titulo
+        return '%s %s' % (self.titulo, self.subcategoria)
 
 class ContentAdmin(admin.ModelAdmin):
     list_display = ('subcategoria', 'titulo', 'date_added')
