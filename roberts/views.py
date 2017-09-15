@@ -20,8 +20,9 @@ def categoria(request, categoria_id):
 def contenido(request, subcategoria_id):
     """Muestra 1 sola subcategoria y sus contenidos"""
     subcategoria = SubCategoria.objects.get(id=subcategoria_id)
-    contenido = Contenido.objects.order_by('-date_added')
-    context ={'contenido':contenido, 'subcategoria':subcategoria}
+    contents = subcategoria.contenido_set.order_by('-date_added')
+    #contenido = Contenido.objects.order_by('-date_added')
+    context ={'contents':contents, 'subcategoria':subcategoria}
     return  render(request, 'roberts/contenido.html', context)
 
 #def subcategoria(request):
